@@ -1,0 +1,28 @@
+{
+  // Tắt cửa sổ gợi ý tự động của VS Code
+  "editor.quickSuggestions": {
+    "other": "off",
+    "comments": "off",
+    "strings": "off"
+  },
+  "editor.suggestOnTriggerCharacters": false,
+  "editor.parameterHints.enabled": false,
+
+  // --- BỔ SUNG THÊM CÁC DÒNG DƯỚI ĐÂY ---
+
+  // Tắt gợi ý dạng mờ (Inline Suggestions) - Thường do Copilot hoặc AI tạo ra
+  "editor.inlineSuggest.enabled": false,
+
+  // Ngăn việc tự động chọn gợi ý đầu tiên khi bạn gõ
+  "editor.suggestSelection": "first",
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+
+  // Nếu bạn đang dùng GitHub Copilot, dòng này sẽ tắt riêng cho project này
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  }
+}
