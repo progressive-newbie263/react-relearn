@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      function App() {
+        const [sharedCount, setSharedCount] = React.useState(0);
+
+        const handleSharedClick = () => {
+          setSharedCount(sharedCount + 1);
+        }
+
+        const handleResetClick = () => {
+          setSharedCount(0);
+        }
+
+        return (
+          <>
+            <CounterMachine count={sharedCount} onClick={handleSharedClick} />      
+            <br/>
+            
+            <CounterMachine count={sharedCount} onClick={handleSharedClick} />
+            <br/>
+            
+            <button onClick={handleResetClick}>Reset Count</button>
+          </>
+        )
+      }
+
+      function CounterMachine({ count, onClick }) {
+
+        return (
+          <>
+            <button onClick={onClick}>
+              Clicked {count} {count == 1 ? 'time' : 'times'}
+            </button>
+          </>
+        )
+      }
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>
